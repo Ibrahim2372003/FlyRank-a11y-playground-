@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  max-width: 40rem;
+  margin-inline: auto;
+  line-height: 1.5;
+}
+
+section {
+  margin-block: 2rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid #ddd;
+}
+
+kbd {
+  border: 1px solid #bbb;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.9em;
+  background: #f6f6f6;
+}
+
+button {
+  font: inherit;
+  padding: 0.5em 1em;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+/* Every interactive element in this project relies on the browser's
+   default focus ring rather than a custom one — a from-scratch a11y
+   demo is the wrong place to accidentally remove it. */
+:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* --- Tabs -------------------------------------------------------------- */
+
+.tabs-list {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  background: transparent;
+}
+
+.tab-active {
+  border-color: #ccc;
+  background: white;
+  font-weight: 600;
+}
+
+.tab-panel {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Vertical orientation: tabs stack in a column beside their panel
+   instead of sitting in a row above it. */
+.tabs-vertical {
+  display: flex;
+  gap: 1rem;
+}
+
+.tabs-vertical .tabs-list {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 1px solid #ccc;
+  padding-right: 0.5rem;
+}
+
+.tabs-vertical .tab {
+  border-radius: 6px 0 0 6px;
+  text-align: left;
+}
+
+.tabs-vertical .tab-active {
+  border-color: #ccc;
+}
+
+.tabs-vertical .tab-panel {
+  flex: 1;
+  border: 1px solid #ccc;
+}
+
+/* --- Tooltip --------------------------------------------------------------- */
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-bubble {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: white;
+  padding: 0.35em 0.6em;
+  border-radius: 6px;
+  font-size: 0.85em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);
+  z-index: 10;
+}
+
+.tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1a1a1a;
+}
+
+/* --- Disclosure ---------------------------------------------------------- */
+
+.disclosure {
+  margin-block: 0.5rem;
+}
+
+.disclosure-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  padding: 0.5em 0;
+}
+
+.disclosure-icon {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.disclosure-icon-open {
+  transform: rotate(90deg);
+}
+
+.disclosure-content {
+  padding-inline-start: 1.5rem;
+}
+
+/* --- Modal ----------------------------------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-dialog {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 0.3);
+}
+
+.modal-title {
+  margin-top: 0;
+}
+
+.modal-description {
+  color: #555;
+  margin-top: -0.5rem;
+}
+
+.modal-body label {
+  display: block;
+  margin-block: 0.75rem 0.25rem;
+}
+
+.modal-body input {
+  font: inherit;
+  padding: 0.4em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-close {
+  margin-top: 1rem;
+}
